@@ -2944,3 +2944,23 @@ body.galaxy-memories-ready #memory-progress-v712 { display:block !important; }
  #space-decor { pointer-events:none !important; }
 }
 /* Landscape remains usable without forced rotation, on phones and desktop. */
+
+/* V79 — Balanced five-memory layout for portrait phones (based on iPhone screenshot).
+   CSS only: no changes to characters, clicks, modals, or desktop positions. */
+@media (max-width: 800px) and (orientation: portrait) {
+  #galaxy-page .memory-star.animated-memory {
+    width: clamp(66px, 18.5vw, 84px) !important;
+    height: clamp(66px, 18.5vw, 84px) !important;
+    touch-action: manipulation;
+  }
+  /* Kuromi — left of the heart */
+  #galaxy-page .memory1 { left: 9% !important; top: 32% !important; }
+  /* Heart-hugging white character — centered above the heart */
+  #galaxy-page .memory5 { left: 43% !important; top: 23% !important; }
+  /* Two cats — right of the heart */
+  #galaxy-page .memory2 { left: 73% !important; top: 32% !important; }
+  /* My Melody — lower left, clear of the title */
+  #galaxy-page .memory3 { left: 16% !important; top: 65% !important; }
+  /* Penguin — lower right, clear of the title */
+  #galaxy-page .memory4 { left: 72% !important; top: 65% !important; }
+}
