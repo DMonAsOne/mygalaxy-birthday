@@ -2988,3 +2988,43 @@ body.galaxy-memories-ready #memory-progress-v712 { display:block !important; }
  #heart-ready-v712 {top:calc(50% + 48px) !important;}
  #final-heart-button-v712 {top:50% !important;width:clamp(70px,27vh,120px) !important;height:clamp(70px,27vh,120px) !important;}
 }
+
+/* V77 — compact cinematic galaxy on short landscape phone screens.
+   Keep all five interactive memories in distinct safe areas. */
+@media (orientation:landscape) and (max-height:650px) and (pointer:coarse) {
+  body.galaxy-entered #galaxy-page {
+    position:fixed !important; inset:0 !important;
+    width:100vw !important; height:100dvh !important;
+    min-height:0 !important; margin:0 !important;
+    overflow:hidden !important;
+  }
+  #galaxyCanvas {
+    position:absolute !important; left:0 !important; top:0 !important;
+    width:100vw !important; height:100dvh !important;
+    transform:scale(.79) !important;
+    transform-origin:center center !important;
+  }
+  #galaxy-page .memory-star.animated-memory {
+    width:clamp(48px,15vh,72px) !important;
+    height:clamp(48px,15vh,72px) !important;
+    z-index:45 !important;
+  }
+  #galaxy-page .memory1 {left:12% !important;top:23% !important;}
+  #galaxy-page .memory5 {left:47% !important;top:10% !important;}
+  #galaxy-page .memory2 {left:82% !important;top:23% !important;}
+  #galaxy-page .memory3 {left:15% !important;top:67% !important;}
+  #galaxy-page .memory4 {left:82% !important;top:67% !important;}
+  #galaxy-title {
+    top:77% !important;left:50% !important;width:60% !important;
+    z-index:32 !important;
+  }
+  #galaxy-title .galaxy-title-main {
+    font-size:clamp(15px,4.1vh,23px) !important;
+    letter-spacing:0 !important;
+  }
+  #galaxy-title .galaxy-title-sub {
+    font-size:clamp(9px,2.3vh,12px) !important;
+  }
+  #space-decor {transform:scale(.87);transform-origin:center center;}
+  #memory-progress-v712 {top:6px !important;font-size:10px !important;}
+}
