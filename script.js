@@ -105,8 +105,10 @@ function stopHold() {
     }
 }
 
-heart.addEventListener("pointerdown", e => {
+const heartTouchArea = document.querySelector(".heart-wrapper");
+heartTouchArea.addEventListener("pointerdown", e => {
     e.preventDefault();
+    try { heartTouchArea.setPointerCapture(e.pointerId); } catch (_) {}
     startHold();
 });
 
@@ -124,6 +126,7 @@ function login() {
         setTimeout(() => {
             document.getElementById("login-page").style.display = "none";
             galaxyPage.style.display = "block";
+            document.body.classList.add("galaxy-entered");
             startUniverse();
         }, 700);
     } else {
@@ -3710,7 +3713,7 @@ function showWelcome() {
 }
 
 function startUniverse() {
-    document.body.classList.remove("v713-galaxy-ready");
+    document.body.classList.remove("v713-galaxy-ready", "galaxy-memories-ready");
 
     resizeCanvas();
 
@@ -3989,6 +3992,7 @@ function universeAnimation(now) {
 
             if (!memoriesShown && finalFadeT > 0.88) {
                 memoriesShown = true;
+                document.body.classList.add("galaxy-memories-ready", "v713-galaxy-ready");
 
                 memoryStars.forEach((star, index) => {
                     setTimeout(() => {
@@ -4068,7 +4072,7 @@ function v712CollectMemory(star) {
 }
 
 v712HeartButton?.addEventListener("click", () => {
-    if (v712Collected.size !== 5) return;
+    if (v712Collected.size !== 5 || !document.body.classList.contains("galaxy-memories-ready")) return;
     v712HeartReady?.classList.remove("show");
     v712HeartButton.classList.remove("ready");
     v712Ending?.classList.add("show");
@@ -4082,7 +4086,8 @@ v712EndingBack?.addEventListener("click", () => {
 
 memoryStars.forEach(star => {
     star.addEventListener("click", () => {
-        document.body.classList.add("v713-galaxy-ready");
+        if (!document.body.classList.contains("galaxy-memories-ready") ||
+            !star.classList.contains("show")) return;
         v712CollectMemory(star);
         if (star.dataset.special === "first-meeting" && firstMeetingModal) {
             firstMeetingModal.classList.add("show");
