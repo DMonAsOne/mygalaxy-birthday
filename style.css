@@ -2964,3 +2964,14 @@ body.galaxy-memories-ready #memory-progress-v712 { display:block !important; }
   /* Penguin — lower right, clear of the title */
   #galaxy-page .memory4 { left: 72% !important; top: 65% !important; }
 }
+
+
+/* V80 — User-marked leftward adjustments on portrait screenshot only. */
+@media (max-width: 800px) and (orientation: portrait) {
+  /* White hugging-heart: slightly left from upper center */
+  #galaxy-page .memory5 { left: 33% !important; top: 23% !important; }
+  /* My Melody: leftward without clipping */
+  #galaxy-page .memory3 { left: 9% !important; top: 65% !important; }
+  /* Guitar penguin: toward center, away from right edge */
+  #galaxy-page .memory4 { left: 57% !important; top: 65% !important; }
+}
