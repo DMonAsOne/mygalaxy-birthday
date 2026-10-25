@@ -2922,90 +2922,25 @@ body.galaxy-memories-ready #memory-progress-v712 { display:block !important; }
   #space-decor .space-icon { pointer-events:none; }
 }
 
-/* V75 — Landscape galaxy on phones; intro/login remain portrait-friendly */
-#rotate-galaxy-notice { display:none; }
-@media (hover:none) and (pointer:coarse) and (orientation:portrait) {
-  body.galaxy-memories-ready #rotate-galaxy-notice {
-    position:fixed; inset:0; z-index:450; display:flex;
-    align-items:center; justify-content:center; padding:24px;
-    background:radial-gradient(ellipse at center,#241044 0%,#09041d 58%,#03020e 100%);
-    color:#fff; text-align:center; font-family:"Mali",sans-serif;
-  }
-  /* Do not cover a currently opened memory, cake or video dialog. */
-  body.galaxy-modal-open #rotate-galaxy-notice,
-  body.galaxy-ending-open #rotate-galaxy-notice { display:none; }
-  .rotate-galaxy-content {max-width:340px;}
-  .rotate-galaxy-phone {font-size:68px; animation:v75Rotate 2.4s ease-in-out infinite alternate;}
-  .rotate-galaxy-content h2 {font-size:19px;line-height:1.8;color:#ffd4f0;margin:20px 0 8px;}
-  .rotate-galaxy-content p {font-size:15px;margin:0 0 16px;}
-  .rotate-galaxy-content small {font-size:12px;color:#c6b7dd;}
+/* V78 — Portrait-first mobile layout. No rotate overlay or landscape override. */
+@media (max-width: 800px) and (orientation: portrait) {
+ html, body { width:100%; max-width:100%; overflow-x:hidden; }
+ #heart-page, #login-page, #galaxy-page { height:100dvh !important; min-height:100dvh !important; }
+ #galaxy-page { width:100vw !important; overflow:hidden !important; }
+ #galaxyCanvas { width:100% !important; height:100% !important; }
+ #galaxy-page .memory-star.animated-memory { width:clamp(58px,17vw,78px) !important; height:clamp(58px,17vw,78px) !important; }
+ #galaxy-page .memory1 { left:17% !important; top:30% !important; }
+ #galaxy-page .memory5 { left:51% !important; top:21% !important; }
+ #galaxy-page .memory2 { left:83% !important; top:30% !important; }
+ #galaxy-page .memory3 { left:22% !important; top:64% !important; }
+ #galaxy-page .memory4 { left:79% !important; top:64% !important; }
+ #galaxy-title { left:50% !important; top:79% !important; width:96% !important; }
+ .galaxy-title-main { font-size:clamp(22px,6vw,30px) !important; letter-spacing:1px !important; }
+ .galaxy-title-sub { font-size:clamp(11px,3vw,15px) !important; }
+ #memory-progress-v712 { top: max(8px, env(safe-area-inset-top)) !important; font-size:11px !important; }
+ #heart-ready-v712 { top:calc(48% + 105px) !important; }
+ #final-heart-button-v712 { top:48% !important; width:125px !important; height:125px !important; }
+ .heart-wrapper { touch-action:none; }
+ #space-decor { pointer-events:none !important; }
 }
-@keyframes v75Rotate {from{transform:rotate(0deg)}to{transform:rotate(90deg)}}
-@media (hover:none) and (pointer:coarse) and (orientation:landscape) and (max-height:600px) {
-  #galaxy-page {height:100dvh;min-height:100dvh;}
-  #galaxy-page .memory-star.animated-memory {width:clamp(52px,12vh,88px);height:clamp(52px,12vh,88px);}
-  #galaxy-page .memory1 {left:15%;top:25%;}
-  #galaxy-page .memory2 {left:78%;top:23%;}
-  #galaxy-page .memory3 {left:24%;top:65%;}
-  #galaxy-page .memory4 {left:77%;top:65%;}
-  #galaxy-page .memory5 {left:50%;top:13%;}
-  #galaxy-title {top:76% !important;left:50%;width:75%;}
-  .galaxy-title-main {font-size:clamp(18px,5vh,30px) !important;}
-  .galaxy-title-sub {font-size:clamp(10px,2.8vh,15px) !important;}
-  #memory-progress-v712 {top:5px;}
-  #heart-ready-v712 {top:calc(50% + 55px);}
-  #final-heart-button-v712 {top:50%;width:clamp(75px,26vh,125px);height:clamp(75px,26vh,125px);}
-  #space-decor .space-icon {pointer-events:none;}
-}
-
-/* V76: robust landscape layout. Do not depend on hover/pointer media detection. */
-#rotate-galaxy-notice { display:none !important; }
-@media (orientation:portrait) and (max-width:900px) {
- body.galaxy-memories-ready:not(.galaxy-modal-open):not(.galaxy-ending-open) #rotate-galaxy-notice {
-  display:flex !important;position:fixed;inset:0;z-index:490;align-items:center;justify-content:center;
-  padding:24px;background:radial-gradient(ellipse at center,#241044,#09041d 62%,#03020e);
-  color:white;text-align:center;font-family:'Mali',sans-serif;
- }
- #rotate-galaxy-notice .rotate-galaxy-content {max-width:340px;}
- #rotate-galaxy-notice .rotate-galaxy-phone {font-size:65px;}
- #rotate-galaxy-notice h2 {font-size:20px;line-height:1.6;color:#ffd4f0;}
- #rotate-galaxy-notice p {font-size:15px;}
- #rotate-galaxy-notice small {font-size:12px;color:#c6b7dd;}
-}
-@media (orientation:landscape) and (max-height:650px) {
- html,body {width:100%;max-width:100%;overflow-x:hidden;}
- #galaxy-page {position:relative;width:100%;height:100dvh;min-height:0;overflow:hidden;}
- #galaxy-page .memory-star.animated-memory {width:clamp(46px,19vh,85px) !important;height:clamp(46px,19vh,85px) !important;}
- #galaxy-page .memory1 {left:13% !important;top:29% !important;}
- #galaxy-page .memory2 {left:80% !important;top:29% !important;}
- #galaxy-page .memory3 {left:23% !important;top:70% !important;}
- #galaxy-page .memory4 {left:76% !important;top:70% !important;}
- #galaxy-page .memory5 {left:50% !important;top:17% !important;}
- #galaxy-title {top:79% !important;left:50% !important;width:65% !important;}
- .galaxy-title-main {font-size:clamp(16px,5vh,28px) !important;}
- .galaxy-title-sub {font-size:clamp(10px,2.8vh,15px) !important;}
- #memory-progress-v712 {top:6px !important;}
- #heart-ready-v712 {top:calc(50% + 48px) !important;}
- #final-heart-button-v712 {top:50% !important;width:clamp(70px,27vh,120px) !important;height:clamp(70px,27vh,120px) !important;}
-}
-
-/* V77: compact landscape composition for mobile browsers (Safari/Chrome).
-   Override V75/V76 layout without changing desktop or portrait. */
-@media (orientation:landscape) and (max-height:650px) and (max-width:1200px) {
-  #galaxy-page { position:fixed !important; inset:0 !important; width:100vw !important; height:100dvh !important; overflow:hidden !important; }
-  #galaxyCanvas { transform:scale(.78) !important; transform-origin:50% 47% !important; }
-  #space-decor { transform:scale(.84) !important; transform-origin:50% 49% !important; }
-  #galaxy-page .memory-star.animated-memory { width:clamp(42px,13vh,68px) !important; height:clamp(42px,13vh,68px) !important; }
-  #galaxy-page .memory1 { left:12% !important; top:26% !important; }
-  #galaxy-page .memory2 { left:85% !important; top:27% !important; }
-  #galaxy-page .memory3 { left:15% !important; top:66% !important; }
-  #galaxy-page .memory4 { left:84% !important; top:67% !important; }
-  #galaxy-page .memory5 { left:50% !important; top:14% !important; }
-  #galaxy-title { left:50% !important; top:82% !important; width:66% !important; max-height:16vh !important; }
-  .galaxy-title-main { font-size:clamp(13px,3.3vh,21px) !important; letter-spacing:1px !important; }
-  .galaxy-title-sub { font-size:clamp(9px,2.1vh,12px) !important; }
-  #galaxy-title .css-cake { transform:scale(.65) !important; transform-origin:center bottom !important; }
-  #memory-progress-v712 { top:5px !important; padding:4px 9px !important; font-size:10px !important; }
-  #heart-ready-v712 { top:70% !important; }
-  #final-heart-button-v712 { width:clamp(70px,20vh,110px) !important; height:clamp(70px,20vh,110px) !important; }
-}
+/* Landscape remains usable without forced rotation, on phones and desktop. */

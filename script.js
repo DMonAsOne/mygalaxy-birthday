@@ -4299,5 +4299,3 @@ starMessage.addEventListener("click", event => {
 });
 
 /* V32.7 CLOUDY SPIRAL: V34+ overrides removed intentionally. */
-
-/* V76: orientation overlay is handled with CSS media queries. */
