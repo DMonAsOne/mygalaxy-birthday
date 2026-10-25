@@ -4300,25 +4300,4 @@ starMessage.addEventListener("click", event => {
 
 /* V32.7 CLOUDY SPIRAL: V34+ overrides removed intentionally. */
 
-/* V75: orientation guidance only during galaxy exploration, never during login. */
-(function () {
-    const notice = document.getElementById('rotate-galaxy-notice');
-    if (!notice) return;
-    const observer = new MutationObserver(() => {
-        const dialogs = [
-            '#star-message', '#love-story-modal', '#first-meeting-modal',
-            '#birthday-wish-modal', '#song-video-modal', '#care-note-modal'
-        ];
-        const modalOpen = dialogs.some(selector => {
-            const el = document.querySelector(selector);
-            if (!el) return false;
-            const st = getComputedStyle(el);
-            return st.display !== 'none' && st.visibility !== 'hidden' &&
-                (el.classList.contains('show') || st.display === 'flex');
-        });
-        document.body.classList.toggle('galaxy-modal-open', modalOpen);
-        document.body.classList.toggle('galaxy-ending-open',
-            !!document.querySelector('#ending-v712.show'));
-    });
-    observer.observe(document.body, {subtree:true,attributes:true,attributeFilter:['class','style']});
-})();
+/* V76: orientation overlay is handled with CSS media queries. */
