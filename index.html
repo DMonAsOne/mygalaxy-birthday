@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Galaxy</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mali:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HEART PAGE
+    ========================== -->
+
+    <div id="heart-page">
+
+        <div class="heart-wrapper">
+
+            <div class="heart" id="heart">
+                ❤️
+            </div>
+
+        </div>
+
+        <div class="progress-text" id="progressText">
+            กดค้างที่หัวใจ ❤️
+        </div>
+
+        <!-- Heart loading bar -->
+        <div class="heart-progress-track" aria-hidden="true">
+            <div class="heart-progress-fill" id="heartProgressFill"></div>
+            <div class="heart-progress-shine"></div>
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         LOGIN PAGE
+    ========================== -->
+
+    <div id="login-page">
+
+        <div class="login-box">
+
+            <h2>🔐 Login My Love</h2>
+
+            <p>
+                วันเกิดเทอรึป่าวว วว ดด คศ 🐷
+            </p>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="รหัสผ่าน"
+            >
+
+            <button id="loginButton">
+                เข้าสู่ระบบ
+            </button>
+
+            <p id="loginMessage"></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         GALAXY PAGE
+    ========================== -->
+
+    <div id="galaxy-page">
+
+        <canvas id="galaxyCanvas"></canvas>
+
+
+        <!-- Welcome -->
+
+        <div id="welcome-screen">
+
+            <div class="welcome-title">
+                Welcome
+            </div>
+
+            <div class="welcome-subtitle">
+                to our universe
+            </div>
+
+        </div>
+
+
+        <!-- Galaxy title -->
+        <div id="space-decor" aria-hidden="true">
+            <span class="space-icon planet d1"><i></i></span>
+            <span class="moon-halo d2"></span>
+            <span class="space-icon moon d2"></span>
+            <span class="space-icon heart d3">♡</span>
+            <span class="space-icon star d4">✦</span>
+            <span class="space-icon cute-cloud d5"><i></i></span>
+
+            <span class="space-icon star d6">✧</span>
+            <span class="space-icon heart d7">♡</span>
+            <span class="moon-halo d8"></span>
+            <span class="space-icon moon d8"></span>
+            <span class="space-icon star d9">★</span>
+            <span class="space-icon cute-cloud d10"><i></i></span>
+
+            <span class="space-icon planet d11"><i></i></span>
+            <span class="space-icon heart d12">♡</span>
+            <span class="space-icon star d13">✦</span>
+            <span class="moon-halo d14"></span>
+            <span class="space-icon moon d14"></span>
+            <span class="space-icon star d15">✧</span>
+        </div>
+
+        <div id="galaxy-title">
+
+            <div class="galaxy-title-main curved-hbd" aria-label="Happy Birthday 🎂">
+                <span style="--y:10px; --r:-5deg">H</span>
+                <span style="--y:7px; --r:-4deg">a</span>
+                <span style="--y:4px; --r:-3deg">p</span>
+                <span style="--y:2px; --r:-2deg">p</span>
+                <span style="--y:0px; --r:-1deg">y</span>
+
+                <span class="hbd-space">&nbsp;</span>
+
+                <span style="--y:0px; --r:1deg">B</span>
+                <span style="--y:2px; --r:2deg">i</span>
+                <span style="--y:4px; --r:3deg">r</span>
+                <span style="--y:6px; --r:4deg">t</span>
+                <span style="--y:8px; --r:5deg">h</span>
+                <span style="--y:9px; --r:5deg">d</span>
+                <span style="--y:10px; --r:5deg">a</span>
+                <span style="--y:11px; --r:6deg">y</span>
+
+                <span class="hbd-space">&nbsp;</span>
+
+                <span class="hbd-cake css-cake" style="--y:9px; --r:5deg" aria-hidden="true">
+                    <span class="cake-glow"></span>
+
+                    <span class="cake-candles">
+                        <span class="cake-candle candle-1"><span class="cake-flame"></span></span>
+                        <span class="cake-candle candle-2"><span class="cake-flame"></span></span>
+                        <span class="cake-candle candle-3"><span class="cake-flame"></span></span>
+                    </span>
+
+                    <span class="cake-top"></span>
+                    <span class="cake-body">
+                        <span class="cake-face">
+                            <span class="cake-eye eye-left"></span>
+                            <span class="cake-eye eye-right"></span>
+                            <span class="cake-mouth"></span>
+                        </span>
+                    </span>
+                </span>
+            </div>
+
+            <div class="galaxy-title-sub">
+                สุขสันต์วันเกิดนะคับที่รัก ❤️
+            </div>
+
+        </div>
+
+
+        <!-- Memory Stars -->
+
+        <div
+            class="memory-star memory1 animated-memory"
+            data-message="จุดเริ่มต้นของเรา ❤️"
+            data-special="first-meeting"
+            aria-label="เปิดจุดเริ่มต้นของเรา"
+        >
+            <img src="assets/memory1.gif" alt="Kuromi" draggable="false">
+        </div>
+        </div>
+
+        <div
+            class="memory-star memory2 animated-memory"
+            data-message="ขอบคุณที่เข้ามาอยู่ในชีวิตเรานะ 🌙"
+            data-special="life-letter"
+            aria-label="เปิดความรู้สึกและโมเมนต์ของเรา"
+        >
+            <img src="assets/memory2.gif" alt="Cute Cats" draggable="false">
+        </div>
+        </div>
+
+        <div
+            class="memory-star memory3 animated-memory"
+            data-message="ทุกช่วงเวลาที่มีเธอ เราจำได้เสมอ ✨"
+            data-special="care-note"
+        >
+            <img src="assets/memory3.gif" alt="Cute Character" draggable="false">
+        </div>
+        </div>
+
+        <div
+            class="memory-star memory4 animated-memory"
+            data-message="เพลงนี้เค้าร้องให้เทอ 🎵"
+            data-special="song-video"
+            aria-label="เปิดวิดีโอเซอร์ไพรส์"
+        >
+            <img src="assets/memory4.gif" alt="Penguin Guitar" draggable="false">
+        </div>
+        </div>
+
+        <div
+            class="memory-star memory5 animated-memory"
+            data-message="สุขสันต์วันเกิดนะคนเก่ง 🎂❤️"
+            data-special="birthday-wish"
+            aria-label="เปิดเซอร์ไพรส์วันเกิด"
+        >
+            <img src="assets/memory5.gif" alt="Heart Squeeze" draggable="false">
+        </div>
+        </div>
+
+
+        <!-- Message -->
+
+        <div id="star-message">
+
+            <div id="message-box">
+
+                <button id="close-message">
+                    ×
+                </button>
+
+                <p id="message-text"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+        <!-- Special memory: ตัวที่ 3 / แมวสองตัว -->
+        <div id="love-story-modal" aria-hidden="true">
+            <div class="love-story-card">
+                <button id="close-love-story" type="button" aria-label="ปิด">×</button>
+
+                <div class="love-story-kicker">Our little story ✨</div>
+                <h2>ตั้งแต่มีเทอเข้ามาในชีวิต ❤️</h2>
+
+                <div class="love-story-gallery" aria-label="โมเมนต์น่ารักของเรา">
+                    <figure class="moment-photo p1">
+                        <img src="assets/moment1.jpeg" alt="โมเมนต์ของเรา 1">
+                        <figcaption>เล่นเกมด้วยกัน 🎮</figcaption>
+                    </figure>
+
+                    <figure class="moment-photo p2">
+                        <img src="assets/moment2.jpeg" alt="โมเมนต์ของเรา 2">
+                        <figcaption>ความทรงจำเล็ก ๆ ที่ชอบ ❤️</figcaption>
+                    </figure>
+
+                    <figure class="moment-photo p3">
+                        <img src="assets/moment3.png" alt="โมเมนต์ของเรา 3">
+                        <figcaption>คุยกันนานแค่ไหนก็ไม่เบื่อ 🧸</figcaption>
+                    </figure>
+
+                    <figure class="moment-photo p4">
+                        <img src="assets/moment4.jpeg" alt="โมเมนต์ของเรา 4">
+                        <figcaption>สักวันอยากมีรูปแบบนี้ด้วยกัน 🤍</figcaption>
+                    </figure>
+
+                    <figure class="moment-photo p5">
+                        <img src="assets/moment5.jpeg" alt="โมเมนต์ของเรา 5">
+                        <figcaption>โลกเล็ก ๆ ของเราสองคน ✨</figcaption>
+                    </figure>
+
+                    <figure class="moment-photo p6">
+                        <img src="assets/moment6.jpeg" alt="โมเมนต์ของเรา 6">
+                        <figcaption>คิดถึงกันเสมอ 💕</figcaption>
+                    </figure>
+                </div>
+
+                <div class="love-story-letter">
+                    <div class="letter-heart">♡</div>
+                    <p>
+                        ตะเอ๋ เป็นไงบ้างที่มีเค้าเข้ามาในชีวิต แต่สำหรับเค้า เค้าดีใจมากๆนะที่มีเทอเข้ามา
+                        ถึงจะไม่เคยเจอกัน แต่เค้าก็ตั้งใจรักมาตลอดนะ อยากพาทำอะไรหลายๆอย่าง อยากเป็นคนดูแลเทอ
+                        เค้าจะทำให้เห็นนะ ว่ารักถูกคนเป็นยังไง ถึงยังไงเทอก็ยังเป็นคนเดียวที่คิดถึงตลอด
+                        อยากกลับบ้านมาคุยด้วย พาเล่นเกม ดูหนังดูตูน รวมทั้งที่ตอนนี้ยังทำไม่ได้ พาไปเที่ยว
+                        เดินตลาด ดูหนัง ซื้อเสื้อผ้าให้ พาไปซื้อของกิน นั่งกินของอร่อยๆด้วยกัน
+                        เค้ารักเทอที่สุดเลยนะอ้วน❤️
+                    </p>
+                </div>
+
+                <div class="love-story-ending">ขอบคุณที่เข้ามาเป็นความสุขของเค้านะ 💗</div>
+            </div>
+        </div>
+
+
+
+        <!-- Kuromi / จุดเริ่มต้นของเรา -->
+        <div id="first-meeting-modal" class="story-modal" aria-hidden="true">
+            <div class="story-card">
+                <button id="close-first-meeting" class="story-close" type="button" aria-label="ปิด">×</button>
+                <div class="story-kicker">The beginning of us ✨</div>
+                <h2>จุดเริ่มต้นของเรา 💗</h2>
+                <div class="first-meeting-gallery">
+                    <figure class="first-meeting-photo"><img src="assets/first_chat_1.jpeg" alt="บทสนทนาแรกของเรา ภาพที่ 1" loading="lazy"><figcaption>วันแรก ๆ ที่ได้คุยกัน 💬</figcaption></figure>
+                    <figure class="first-meeting-photo"><img src="assets/first_chat_2.jpeg" alt="บทสนทนาแรกของเรา ภาพที่ 2" loading="lazy"><figcaption>จาก Omi มาถึงวันนี้ ❤️</figcaption></figure>
+                </div>
+                <div class="first-meeting-letter"><p>ครั้งแรกที่คุยกัน เราเจอกันในomi แต่เทอเป็นคนทักก่อนนะ555 ตอนแรกก็ไม่ได้คิดอะไร แต่พอฟอลไอจีกัน เค้ากลับคิดว่า เทออยู่สูงจัง คนคงเข้าหาเทอเยอะ แต่กลับกันก็ดีใจนะที่เทอเลือกจะทักเค้ามา งั้นเค้าก็จะพยายามทำให้เต็มที่ ในเมื่อเทอให้โอกาสเค้า สุดท้ายแล้วเทอก็ไม่ทำให้ความพยายามเค้าเสียเปล่า ขอบคุณนะคับแฟน😊</p></div>
+                <div class="story-ending">ดีใจที่วันนั้นเราได้รู้จักกันนะ ♡</div>
+            </div>
+        </div>
+        <!-- Special memory: ตัวซ้ายล่าง / My Melody -->
+        <div id="care-note-modal" aria-hidden="true">
+            <div class="care-note-card">
+                <button id="close-care-note" type="button" aria-label="ปิด">×</button>
+                <div class="care-note-kicker">a little thing I remember ♡</div>
+                <h2>ความใส่ใจเล็ก ๆ น้อย ๆ ของแฟน 💗</h2>
+
+                <figure class="care-note-photo">
+                    <img src="assets/care-note.jpeg" alt="โน้ตเล็ก ๆ ที่จดเรื่องของแฟน">
+                    <figcaption>ก็คนนี้สำคัญ เลยอยากจำทุกอย่างเลย 😚</figcaption>
+                </figure>
+
+                <div class="care-note-letter">
+                    <span class="care-note-heart">♡</span>
+                    <p>อันนี้ไม่มีไรมาก แค่อยากบอกเทอว่าเค้าใส่ใจเทอแค่ไหน555 จริงๆเค้าจำได้หมดอยู่แล้ว แต่เค้าชอบทำอะไรแบบนี้ มันดูน่ารักดี เหมือนมีข้อมูลแฟนในโทรศัพท์🤣 ตั้งใจกับคนนี้ที่สู๊ดดดด😚</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Special memory: ตัวขาวกอดหัวใจ / Birthday surprise -->
+        <div id="birthday-wish-modal" aria-hidden="true">
+            <div class="birthday-wish-card">
+                <button id="close-birthday-wish" type="button" aria-label="ปิด">×</button>
+
+                <section id="birthday-before" class="birthday-stage active">
+                    <div class="birthday-kicker">a little birthday surprise ✨</div>
+                    <h2>Happy Birthday Toey 🎂</h2>
+
+                    <!--
+                      PHOTO PLACEHOLDER:
+                      When the real photo is ready, replace this block with:
+                      <img class="birthday-real-photo" src="assets/cake-lit.jpg" alt="รูปถือเค้กตอนเทียนติด">
+                    -->
+                    <div class="birthday-real-photo-frame"><img class="birthday-real-photo" src="assets/cake-lit.jpeg" alt="รูปถือเค้กก่อนเป่า เทียนติด"></div>
+
+                    <p class="birthday-before-text">
+                        สุขสันต์วันเกิดนะเตย ปีนี้ปีแรกที่มีเค้ามาแฮปเลยนะ นี่เค้กวันเกิด ขอพรแล้วเป่าเลยยย☺
+                    </p>
+
+                    <div id="wish-prompt" class="wish-prompt">
+                        <span class="wish-sparkle">✦</span>
+                        <strong>หลับตาแล้วขอพรหนึ่งอย่างนะ</strong>
+                        <small>เก็บไว้เป็นความลับด้วยน้าา 🤭</small>
+                    </div>
+
+                    <button id="blow-candles" class="blow-candles-button" type="button">
+                        เป่า 🎂
+                    </button>
+                </section>
+
+                <section id="birthday-after" class="birthday-stage">
+                    <div class="birthday-kicker">wish made ✨</div>
+                    <h2>เย่!! 🥳</h2>
+
+                    <!--
+                      PHOTO PLACEHOLDER:
+                      When the real photo is ready, replace this block with:
+                      <img class="birthday-real-photo" src="assets/cake-out.jpg" alt="รูปถือเค้กตอนเทียนดับ">
+                    -->
+                    <div class="birthday-real-photo-frame"><img class="birthday-real-photo" src="assets/cake-out.jpeg" alt="รูปถือเค้กหลังเป่า เทียนดับ"></div>
+
+                    <div class="birthday-after-letter">
+                        <span class="birthday-letter-heart">♡</span>
+                        <p><strong>🥳 Happy Birthday To Youuu</strong> เค้าขอให้เทอมีความสุขมากๆนะ ยิ้มเยอะๆ โตขึ้นอีกปีแล้ว ขอให้ทุกสิ่งทุกอย่างที่เทอคิด เป็นจริงอย่างที่เทอตั้งใจเอาไว้นะ เค้าจะอยู่แฮปแบบนี้ไปนานๆเลยย คอยซัพพอร์ตข้างๆ แล้วก็จะรักเทอไปนานๆด้วย ทุกๆการเติบโตจะมีเค้าเสมอนะ รักนะคับ จุ้บมั้วะะ❤</p>
+                    </div>
+                </section>
+
+                <div id="birthday-confetti" aria-hidden="true"></div>
+            </div>
+        </div>
+
+        <!-- Special memory: ตัวขวาล่าง / Video song surprise -->
+        <div id="song-video-modal" aria-hidden="true">
+            <div class="song-video-card">
+                <button id="close-song-video" type="button" aria-label="ปิด">×</button>
+                <div class="song-video-kicker">a song just for you ♡</div>
+                <h2>เพลงนี้เค้าร้องให้เทอ 🎵</h2>
+                <p class="song-video-intro">ปีนี้ไม่ได้มีแค่คำอวยพรนะ มีเพลงจากเค้าให้ฟังด้วย 🤭❤️</p>
+
+                <div id="song-video-placeholder" class="song-video-placeholder" style="display:none">
+                    <div class="video-placeholder-glow"></div>
+                    <div class="video-placeholder-icon">▶</div>
+                    <strong>วิดีโอเซอร์ไพรส์ของเค้า 🎤</strong>
+                    <span>เดี๋ยวถ่ายคลิปแล้วค่อยเอามาใส่ตรงนี้นะ</span>
+                </div>
+
+                <!--
+                  พอมีคลิปจริง ให้ใส่ไฟล์ไว้ที่:
+                  assets/song-surprise.mp4
+
+                  แล้วเอา class "has-real-video" ไปใส่ที่ #song-video-player-wrap
+                  ระบบด้านล่างเตรียมไว้แล้ว ไม่ต้องรื้อการ์ดใหม่
+                -->
+                <div id="song-video-player-wrap" class="song-video-player-wrap has-real-video">
+                    <video id="song-video-player" controls playsinline preload="metadata">
+                        <source src="assets/song-surprise.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div id="song-video-ending" class="song-video-ending">
+                    ร้องไม่เพราะห้ามแซวนะ ตั้งใจร้องให้คนเดียวเลย 🤣❤️
+                </div>
+            </div>
+        </div>
+
+        <!-- V71.2: 5 memories -> complete heart -> ending -->
+        <div id="memory-progress-v712">ความทรงจำ <span>0/5</span> ♡</div>
+        <div id="heart-ready-v712">
+            <b>ความทรงจำครบแล้ว ❤️</b>
+            <small>ลองกดหัวใจตรงกลางดูนะ...</small>
+        </div>
+        <button id="final-heart-button-v712" type="button" aria-label="เปิดข้อความสุดท้าย"></button>
+
+        <div id="ending-v712">
+            <div class="ending-box-v712">
+                <p>ทั้งหมดนี้ อาจเป็นแค่เว็บไซต์เล็ก ๆ ที่เค้าทำให้เทอ</p>
+                <p>แต่ทุกอย่างในนี้ เค้าตั้งใจทำจริง ๆ นะ</p>
+                <p>ขอบคุณที่เข้ามาเป็นส่วนหนึ่งในชีวิตเค้า</p>
+                <p>และหวังว่าวันเกิดปีต่อ ๆ ไป...</p>
+                <p>เค้าจะยังเป็นคนที่ได้พูดคำนี้กับเทออยู่ ❤️</p>
+                <h2>Happy Birthday นะเตย 🎂</h2>
+                <h3>รักนะคับ ❤️</h3>
+                <div class="ending-hearts-v712">♥　♥</div>
+                <div class="ending-us-v712">เค้า ♡ เทอ</div>
+                <button id="ending-back-v712" type="button">กลับไปดูความทรงจำอีกครั้ง ↻</button>
+            </div>
+        </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
